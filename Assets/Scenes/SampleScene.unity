@@ -1851,11 +1851,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5843378443058180157, guid: d42e08c88298f46839740c1691e131bc, type: 3}
       propertyPath: _scaleXFactor
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5843378443058180157, guid: d42e08c88298f46839740c1691e131bc, type: 3}
       propertyPath: _speedTranslate
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5843378443058180157, guid: d42e08c88298f46839740c1691e131bc, type: 3}
       propertyPath: _walls.Array.data[0]
