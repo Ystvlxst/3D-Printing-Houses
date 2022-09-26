@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3913936463700078780, guid: a8ed2c149eb0745a68ed187f95b6af06, type: 3}
       propertyPath: m_Name
-      value: Printer
+      value: Printer Circle Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3913936463700078783, guid: a8ed2c149eb0745a68ed187f95b6af06, type: 3}
       propertyPath: m_RootOrder
@@ -54,6 +54,18 @@ PrefabInstance:
     - target: {fileID: 3913936463700078783, guid: a8ed2c149eb0745a68ed187f95b6af06, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913936465059969777, guid: a8ed2c149eb0745a68ed187f95b6af06, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913936465059969777, guid: a8ed2c149eb0745a68ed187f95b6af06, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913936465059969780, guid: a8ed2c149eb0745a68ed187f95b6af06, type: 3}
+      propertyPath: m_Size.y
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8ed2c149eb0745a68ed187f95b6af06, type: 3}

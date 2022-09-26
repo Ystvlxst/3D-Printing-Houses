@@ -6,8 +6,8 @@ public class RootHeadMovement : MonoBehaviour
 {
     [SerializeField] private MovementSystem _headMovementSystem;
     [SerializeField] private MouseInput _mouseInput;
-    [SerializeField] RoadSegment _roadSegment1;
-    [SerializeField] RoadSegment _roadSegment2;
+    [SerializeField] private RoadSegment _roadSegment1;
+    [SerializeField] private RoadSegment _roadSegment2;
 
     private void Update()
     {
