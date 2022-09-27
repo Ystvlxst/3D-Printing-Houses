@@ -3,17 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class Roof : MonoBehaviour
+public class EndBuild : MonoBehaviour
 {
     [SerializeField] private PrintWall _printWall;
-    [SerializeField] private Transform _targetPosition;
-    [SerializeField] private GameObject _roof;
-    [SerializeField] private ParticleSystem _win;
+    [SerializeField] private GameObject _printer;
 
     private void OnEnable()
     {
-        _roof.SetActive(false);
-
         _printWall.BuildEnded += OnBuildEnd;
     }
 
@@ -24,8 +20,6 @@ public class Roof : MonoBehaviour
 
     private void OnBuildEnd()
     {
-        _roof.SetActive(true);
-        _roof.transform.DOMoveY(_targetPosition.position.y, 1);
-        _win.Play();
+        _printer.gameObject.SetActive(false);
     }
 }

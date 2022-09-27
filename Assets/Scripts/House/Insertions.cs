@@ -7,6 +7,10 @@ public class Insertions : MonoBehaviour
     [SerializeField] private PrintWall _printer;
     [SerializeField] private GameObject _door;
     [SerializeField] private GameObject[] _windows;
+    [SerializeField] private MeshRenderer _doorMesh;
+    [SerializeField] private MeshRenderer[] _windowMeshes;
+    [SerializeField] private Texture _doorTexture;
+    [SerializeField] private Texture _windowTexture;
 
     private void OnEnable()
     {
@@ -17,12 +21,14 @@ public class Insertions : MonoBehaviour
 
         _printer.DoorZoneReached += OnDoorZoneReached;
         _printer.WindowsZoneReached += OnWindowsZoneReached;
+        _printer.BuildEnded += OnBuildEnd;
     }
 
     private void OnDisable()
     {
         _printer.DoorZoneReached -= OnDoorZoneReached;
         _printer.WindowsZoneReached -= OnWindowsZoneReached;
+        _printer.BuildEnded -= OnBuildEnd;
     }
 
     private void OnDoorZoneReached()
@@ -34,5 +40,17 @@ public class Insertions : MonoBehaviour
     {
         foreach (var window in _windows)
             window.SetActive(true);
+    }
+
+    private void OnBuildEnd()
+    {
+        _doorMesh.material.mainTexture = _doorTexture;
+        _doorMesh.material.color = Color.white;
+
+        foreach(var mesh in _windowMeshes)
+        {
+            mesh.material.mainTexture = _windowTexture;
+            mesh.material.color = Color.white;
+        }
     }
 }

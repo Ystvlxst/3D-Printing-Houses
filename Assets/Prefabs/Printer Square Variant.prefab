@@ -1020,6 +1020,8 @@ MonoBehaviour:
   _spawnPoint: {fileID: 5647908374874353970}
   _parent: {fileID: 0}
   _factorPositionY: -10.15
+  _doorWallNumber: 0
+  _windowsWallNumber: 0
   _roadSegments:
   - {fileID: 5876899617618408297}
   - {fileID: 5876899618040215845}
