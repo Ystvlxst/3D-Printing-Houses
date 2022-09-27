@@ -1020,4 +1020,4 @@ MonoBehaviour:
   _spawnPoint: {fileID: 5647908374874353970}
   _parent: {fileID: 0}
   _roadSegment4: {fileID: 5876899618995113926}
-  _factorPositionY: 0
+  _factorPositionY: -10.15

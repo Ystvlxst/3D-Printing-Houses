@@ -41,7 +41,7 @@ public class PrintWall : MonoBehaviour
             {
                 _spawnPoint.transform.DOLocalMoveY(_currentPositionY += _factorPositionY, 0.01f);
                 _currentWallEnded = 0;
-                _factorPositionY = 2.9f;
+                _factorPositionY = 4.5f;
             }
 
             _cementEffect.Play();
