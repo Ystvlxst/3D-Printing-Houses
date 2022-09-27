@@ -17,11 +17,13 @@ public class PrintWall : MonoBehaviour
     [SerializeField] private float _factorPositionY;
 
     private int _currentWallEnded;
+    private int _currentWall;
     private float _currentPositionY;
 
     private void OnEnable()
     {
         _currentWallEnded = 0;
+        _currentWall = 1;
         _currentPositionY = _spawnPoint.transform.position.y;
         _headMovementSystem.PathEnded += OnRoadEnd;
     }
@@ -35,7 +37,14 @@ public class PrintWall : MonoBehaviour
     {
         if (_mouseInput.IsMoved)
         {
-            var wall = Instantiate(_template, _spawnPoint.transform.position, Quaternion.identity, _parent);
+            if (_currentWall < 13)
+            {
+                var wall = Instantiate(_template, _spawnPoint.transform.position, Quaternion.identity, _parent);
+            }
+            else if(_currentWall == 13)
+            {
+                _cementEffect.gameObject.SetActive(false);
+            }
 
             if(_currentWallEnded == 4)
             {
@@ -50,6 +59,9 @@ public class PrintWall : MonoBehaviour
             _cementEffect.Stop();
     }
 
-    private void OnRoadEnd(RoadSegment roadSegment) =>
+    private void OnRoadEnd(RoadSegment roadSegment)
+    {
         _currentWallEnded++;
+        _currentWall++;
+    }
 }
