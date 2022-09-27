@@ -21,27 +21,22 @@ public class Print : MonoBehaviour
     [SerializeField] private RoadSegment _roadSegment3;
     [SerializeField] private RoadSegment _roadSegment4;
 
-    private float _clampPosition = 5f;
-    private Vector3 _startLocation1;
-    private Vector3 _startLocation2;
-    private Vector3 _startLocation3;
-    private Vector3 _startLocation4;
+    private float _clampScale = 9.5f;
+    private float _startScale1;
+    private float _startScale2;
+    private float _startScale3;
+    private float _startScale4;
 
     private void Start()
     {
-        _startLocation1 = _wall1.transform.position;
-        _startLocation2 = _wall2.transform.position;
-        _startLocation3 = _wall3.transform.position;
-        _startLocation4 = _wall4.transform.position;
+        _startScale1 = _wall1.localScale.x;
+        _startScale2 = _wall2.localScale.x;
+        _startScale3 = _wall3.localScale.x;
+        _startScale4 = _wall4.localScale.x;
     }
 
     private void Update()
     {
-        Vector3 lastLocation1 = _wall1.transform.position;
-        Vector3 lastLocation2 = _wall2.transform.position;
-        Vector3 lastLocation3 = _wall3.transform.position;
-        Vector3 lastLocation4 = _wall4.transform.position;
-
         float localScaleX1 = _wall1.localScale.x;
         float localScaleX2 = _wall2.localScale.x;
         float localScaleX3 = _wall3.localScale.x;
@@ -56,52 +51,69 @@ public class Print : MonoBehaviour
         {
             if (_mouseInput.IsMoved)
             {
-                _wall1.localScale = Vector3.MoveTowards(new Vector3(_wall1.localScale.x, _wall1.localScale.y, _wall1.localScale.z),
-                    new Vector3(localScaleX1 += _scaleXFactor, _wall1.localScale.y, _wall1.localScale.z), _speedScale * Time.deltaTime);
+                _wall1.localScale = Vector3.MoveTowards(new Vector3(_startScale1, _wall1.localScale.y, _wall1.localScale.z),
+                    new Vector3(localScaleX1 *= _scaleXFactor, _wall1.localScale.y, _wall1.localScale.z), _speedScale * Time.deltaTime);
                 _wall1.Translate(Vector3.right * _speedTranslate * Time.deltaTime);
             }
 
-            if (Vector3.Distance(_startLocation1, _wall1.transform.position) > _clampPosition)
-                _wall1.transform.position = lastLocation1;
+            if (localScaleX1 >= _clampScale)
+            {
+                var scale1 = _wall1.localScale;
+                scale1.x = localScaleX1;
+                _wall1.localScale = scale1;
+            }
+             
         }
 
         if (_headMovementSystem.CurrentRoad == _roadSegment2)
         {
             if (_mouseInput.IsMoved)
             {
-                _wall2.localScale = Vector3.MoveTowards(new Vector3(_wall2.localScale.x, _wall2.localScale.y, _wall2.localScale.z),
-                    new Vector3(localScaleX2 += _scaleXFactor, _wall2.localScale.y, _wall2.localScale.z), _speedScale * Time.deltaTime);
+                _wall2.localScale = Vector3.MoveTowards(new Vector3(_startScale2, _wall2.localScale.y, _wall2.localScale.z),
+                    new Vector3(localScaleX2 *= _scaleXFactor, _wall2.localScale.y, _wall2.localScale.z), _speedScale * Time.deltaTime);
                 _wall2.Translate(Vector3.right * _speedTranslate * Time.deltaTime);
             }
 
-            if (Vector3.Distance(_startLocation2, _wall2.transform.position) > _clampPosition)
-                _wall2.transform.position = lastLocation2;
+            if (localScaleX2 >= _clampScale)
+            {
+                var scale2 = _wall2.localScale;
+                scale2.x = localScaleX2;
+                _wall2.localScale = scale2;
+            }
         }
 
         if (_headMovementSystem.CurrentRoad == _roadSegment3)
         {
             if (_mouseInput.IsMoved)
             {
-                _wall3.localScale = Vector3.MoveTowards(new Vector3(_wall3.localScale.x, _wall3.localScale.y, _wall3.localScale.z),
-                    new Vector3(localScaleX3 += _scaleXFactor, _wall3.localScale.y, _wall3.localScale.z), _speedScale * Time.deltaTime);
+                _wall3.localScale = Vector3.MoveTowards(new Vector3(_startScale3, _wall3.localScale.y, _wall3.localScale.z),
+                    new Vector3(localScaleX3 *= _scaleXFactor, _wall3.localScale.y, _wall3.localScale.z), _speedScale * Time.deltaTime);
                 _wall3.Translate(Vector3.left * _speedTranslate * Time.deltaTime);
             }
 
-            if (Vector3.Distance(_startLocation3, _wall3.transform.position) > _clampPosition)
-                _wall3.transform.position = lastLocation3;
+            if (localScaleX3 >= _clampScale)
+            {
+                var scale3 = _wall3.localScale;
+                scale3.x = localScaleX3;
+                _wall3.localScale = scale3;
+            }
         }
 
         if (_headMovementSystem.CurrentRoad == _roadSegment4)
         {
             if (_mouseInput.IsMoved)
             {
-                _wall4.localScale = Vector3.MoveTowards(new Vector3(_wall4.localScale.x, _wall4.localScale.y, _wall4.localScale.z),
-                    new Vector3(localScaleX4 += _scaleXFactor, _wall4.localScale.y, _wall4.localScale.z), _speedScale * Time.deltaTime);
+                _wall4.localScale = Vector3.MoveTowards(new Vector3(_startScale4, _wall4.localScale.y, _wall4.localScale.z),
+                    new Vector3(localScaleX4 *= _scaleXFactor, _wall4.localScale.y, _wall4.localScale.z), _speedScale * Time.deltaTime);
                 _wall4.Translate(Vector3.left * _speedTranslate * Time.deltaTime);
             }
 
-            if (Vector3.Distance(_startLocation4, _wall4.transform.position) > _clampPosition)
-                _wall4.transform.position = lastLocation4;
+            if (localScaleX4 >= _clampScale)
+            {
+                var scale4 = _wall4.localScale;
+                scale4.x = localScaleX4;
+                _wall4.localScale = scale4;
+            }
         }
     }
 }
