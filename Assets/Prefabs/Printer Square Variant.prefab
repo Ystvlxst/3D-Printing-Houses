@@ -111,9 +111,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _headMovementSystem: {fileID: 5025327309860748740}
-  _mouseInput: {fileID: 3295421378055649205}
   _roadSegment1: {fileID: 5876899618995113926}
   _roadSegment2: {fileID: 5876899618040215845}
+  _roadSegment5: {fileID: 1194942996183166048}
+  _roadSegment6: {fileID: 1508747043607191285}
 --- !u!114 &3295421378055649205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,7 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _firstRoad: {fileID: 1194942996183166048}
   _options:
-    _moveSpeed: 5
+    _moveSpeed: 3
     _rotationSpeed: 0
     _borderOffset: 0
 --- !u!1 &5647908374874353970
@@ -1014,10 +1015,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _headMovementSystem: {fileID: 5025327309860748740}
-  _mouseInput: {fileID: 3127805069396517310}
   _cementEffect: {fileID: 5072798370496760217}
   _template: {fileID: 9196470505969977856, guid: 723e2905098c54fcb8a668368163fc7d, type: 3}
   _spawnPoint: {fileID: 5647908374874353970}
   _parent: {fileID: 0}
-  _roadSegment4: {fileID: 5876899618995113926}
   _factorPositionY: -10.15
+  _roadSegments:
+  - {fileID: 5876899617618408297}
+  - {fileID: 5876899618040215845}
+  - {fileID: 5876899617667111553}
+  - {fileID: 5876899618995113926}

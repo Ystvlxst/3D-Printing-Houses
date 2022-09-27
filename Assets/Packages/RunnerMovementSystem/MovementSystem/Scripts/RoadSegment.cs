@@ -6,12 +6,11 @@ namespace RunnerMovementSystem
     [RequireComponent(typeof(RoadMeshCreator))]
     public class RoadSegment : PathSegment
     {
-        [SerializeField] private bool _autoMoveForward;
+        [SerializeField] public bool AutoMoveForward;
 
         private RoadMeshCreator _roadMesh;
 
         public override float Width => _roadMesh.roadWidth;
-        public bool AutoMoveForward => _autoMoveForward;
 
         protected override void OnAwake()
         {

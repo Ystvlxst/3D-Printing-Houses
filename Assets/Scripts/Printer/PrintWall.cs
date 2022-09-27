@@ -4,27 +4,37 @@ using RunnerMovementSystem;
 using RunnerMovementSystem.Examples;
 using UnityEngine;
 using DG.Tweening;
+using System;
 
 public class PrintWall : MonoBehaviour
 {
     [SerializeField] private MovementSystem _headMovementSystem;
-    [SerializeField] private MouseInput _mouseInput;
     [SerializeField] private ParticleSystem _cementEffect;
     [SerializeField] private GameObject _template;
     [SerializeField] private GameObject _spawnPoint;
     [SerializeField] private Transform _parent;
-    [SerializeField] private RoadSegment _roadSegment4;
     [SerializeField] private float _factorPositionY;
+    [SerializeField] private int _doorWallNumber;
+    [SerializeField] private int _windowsWallNumber;
+    [SerializeField] private RoadSegment[] _roadSegments;
 
     private int _currentWallEnded;
     private int _currentWall;
     private float _currentPositionY;
 
+    public event Action BuildEnded;
+    public event Action DoorZoneReached;
+    public event Action WindowsZoneReached;
+
     private void OnEnable()
     {
+        foreach(RoadSegment roadSegment in _roadSegments)
+            roadSegment.AutoMoveForward = false;
+
         _currentWallEnded = 0;
         _currentWall = 1;
         _currentPositionY = _spawnPoint.transform.position.y;
+
         _headMovementSystem.PathEnded += OnRoadEnd;
     }
 
@@ -35,8 +45,11 @@ public class PrintWall : MonoBehaviour
 
     private void Update()
     {
-        if (_mouseInput.IsMoved)
+        if (Input.GetMouseButton(0))
         {
+            foreach (RoadSegment roadSegment in _roadSegments)
+                roadSegment.AutoMoveForward = true;
+
             if (_currentWall < 13)
             {
                 var wall = Instantiate(_template, _spawnPoint.transform.position, Quaternion.identity, _parent);
@@ -44,6 +57,8 @@ public class PrintWall : MonoBehaviour
             else if(_currentWall == 13)
             {
                 _cementEffect.gameObject.SetActive(false);
+                _headMovementSystem.enabled = false;
+                BuildEnded?.Invoke();
             }
 
             if(_currentWallEnded == 4)
@@ -57,6 +72,17 @@ public class PrintWall : MonoBehaviour
         }
         else
             _cementEffect.Stop();
+
+        CheckZone();
+    }
+
+    public void CheckZone()
+    {
+        if (_currentWall == _doorWallNumber)
+            DoorZoneReached?.Invoke();
+
+        if (_currentWall == _windowsWallNumber)
+            WindowsZoneReached?.Invoke();
     }
 
     private void OnRoadEnd(RoadSegment roadSegment)
