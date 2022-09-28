@@ -43,7 +43,7 @@ public class PrintWall : MonoBehaviour
         _headMovementSystem.PathEnded -= OnRoadEnd;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (Input.GetMouseButton(0))
         {

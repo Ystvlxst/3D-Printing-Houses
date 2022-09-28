@@ -759,6 +759,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 5.6
       objectReference: {fileID: 0}
+    - target: {fileID: 5528128176300392905, guid: a8ed2c149eb0745a68ed187f95b6af06, type: 3}
+      propertyPath: _sensitivity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5623307390556503773, guid: a8ed2c149eb0745a68ed187f95b6af06, type: 3}
       propertyPath: editorData.vertexPathUpToDate
       value: 1

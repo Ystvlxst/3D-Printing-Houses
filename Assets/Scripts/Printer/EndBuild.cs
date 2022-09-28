@@ -20,6 +20,6 @@ public class EndBuild : MonoBehaviour
 
     private void OnBuildEnd()
     {
-        _printer.gameObject.SetActive(false);
+        _printer.transform.DOScale(0, 1.5f);
     }
 }

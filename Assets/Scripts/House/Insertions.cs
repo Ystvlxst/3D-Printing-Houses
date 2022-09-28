@@ -11,6 +11,9 @@ public class Insertions : MonoBehaviour
     [SerializeField] private MeshRenderer[] _windowMeshes;
     [SerializeField] private Texture _doorTexture;
     [SerializeField] private Texture _windowTexture;
+    [SerializeField] private Insertion[] _insertions;
+
+    public float AllPoints { get; private set; }
 
     private void OnEnable()
     {
@@ -52,5 +55,8 @@ public class Insertions : MonoBehaviour
             mesh.material.mainTexture = _windowTexture;
             mesh.material.color = Color.white;
         }
+
+        foreach (var insertion in _insertions)
+            AllPoints += insertion.Point;
     }
 }
