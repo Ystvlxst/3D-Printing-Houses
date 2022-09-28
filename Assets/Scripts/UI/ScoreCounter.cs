@@ -17,7 +17,7 @@ public class ScoreCounter : MonoBehaviour
         foreach (var insertion in _insertions)
             AllPoints += insertion.Point;
 
-        _pointsText.text = "Points" + " " + AllPoints.ToString();
+        _pointsText.text = "Scores:" + " " + AllPoints.ToString();
         _starsCounter.CheckScore();
     }
 }
