@@ -11,8 +11,7 @@ public class EndLevelPanel : MonoBehaviour
     [SerializeField] private GameObject _panel;
     [SerializeField] private PrintWall _printWall;
     [SerializeField] private Button _restart;
-    [SerializeField] private TMP_Text _pointsText;
-    [SerializeField] private Insertions _insertions;
+    [SerializeField] private ScoreCounter _scoreCounter;
 
     private void OnEnable()
     {
@@ -42,6 +41,6 @@ public class EndLevelPanel : MonoBehaviour
         yield return new WaitForSeconds(1);
         _panel.SetActive(true);
         _panel.transform.DOScale(1, 1);
-        _pointsText.text = "Points" + " " + _insertions.AllPoints.ToString();
+        _scoreCounter.CheckCount();
     }
 }

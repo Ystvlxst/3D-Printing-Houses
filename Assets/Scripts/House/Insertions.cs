@@ -5,23 +5,15 @@ using UnityEngine;
 public class Insertions : MonoBehaviour
 {
     [SerializeField] private PrintWall _printer;
-    [SerializeField] private GameObject _door;
-    [SerializeField] private GameObject[] _windows;
+    [SerializeField] private Insertion _door;
+    [SerializeField] private Insertion[] _windows;
     [SerializeField] private MeshRenderer _doorMesh;
     [SerializeField] private MeshRenderer[] _windowMeshes;
     [SerializeField] private Texture _doorTexture;
     [SerializeField] private Texture _windowTexture;
-    [SerializeField] private Insertion[] _insertions;
-
-    public float AllPoints { get; private set; }
 
     private void OnEnable()
     {
-        _door.SetActive(false);
-
-        foreach (var window in _windows)
-            window.SetActive(false);
-
         _printer.DoorZoneReached += OnDoorZoneReached;
         _printer.WindowsZoneReached += OnWindowsZoneReached;
         _printer.BuildEnded += OnBuildEnd;
@@ -36,13 +28,13 @@ public class Insertions : MonoBehaviour
 
     private void OnDoorZoneReached()
     {
-        _door.SetActive(true);
+        _door.SetScale();
     }
 
     private void OnWindowsZoneReached()
     {
         foreach (var window in _windows)
-            window.SetActive(true);
+            window.SetScale();
     }
 
     private void OnBuildEnd()
@@ -55,8 +47,5 @@ public class Insertions : MonoBehaviour
             mesh.material.mainTexture = _windowTexture;
             mesh.material.color = Color.white;
         }
-
-        foreach (var insertion in _insertions)
-            AllPoints += insertion.Point;
     }
 }

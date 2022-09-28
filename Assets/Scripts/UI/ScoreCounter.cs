@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ScoreCounter : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Insertions _insertionRoot;
+    [SerializeField] private Insertion[] _insertions;
+    [SerializeField] private TMP_Text _pointsText;
+    [SerializeField] private StarsCounter _starsCounter;
 
-    // Update is called once per frame
-    void Update()
+    public float AllPoints { get; private set; }
+
+    public void CheckCount()
     {
-        
+        foreach (var insertion in _insertions)
+            AllPoints += insertion.Point;
+
+        _pointsText.text = "Points" + " " + AllPoints.ToString();
+        _starsCounter.CheckScore();
     }
 }

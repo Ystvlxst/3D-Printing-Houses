@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Insertion : MonoBehaviour
 {
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private PrintWall _printWall;
+    [SerializeField] private Vector3 _targetScale;
 
     public float Point { get; private set; }
 
@@ -13,12 +15,19 @@ public class Insertion : MonoBehaviour
     {
         Point = 0;
 
+        gameObject.transform.localScale = Vector3.zero;
+
         _printWall.BuildEnded += FindHoles;
     }
 
     private void OnDisable()
     {
         _printWall.BuildEnded -= FindHoles;
+    }
+
+    public void SetScale()
+    {
+        gameObject.transform.DOScale(_targetScale, 1);
     }
 
     private void FindHoles()
