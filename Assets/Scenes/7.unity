@@ -4233,6 +4233,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -7.2016
       objectReference: {fileID: 0}
+    - target: {fileID: 697578228847366216, guid: d42e08c88298f46839740c1691e131bc, type: 3}
+      propertyPath: _options._moveSpeed
+      value: 3.4
+      objectReference: {fileID: 0}
     - target: {fileID: 917337976223248226, guid: d42e08c88298f46839740c1691e131bc, type: 3}
       propertyPath: editorData.vertexPathUpToDate
       value: 0
@@ -4376,6 +4380,10 @@ PrefabInstance:
     - target: {fileID: 4947366581686549467, guid: d42e08c88298f46839740c1691e131bc, type: 3}
       propertyPath: m_LocalPosition.z
       value: -1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5025327309860748740, guid: d42e08c88298f46839740c1691e131bc, type: 3}
+      propertyPath: _options._moveSpeed
+      value: 3.4
       objectReference: {fileID: 0}
     - target: {fileID: 5073086659287841057, guid: d42e08c88298f46839740c1691e131bc, type: 3}
       propertyPath: prewarm
@@ -4839,7 +4847,7 @@ PrefabInstance:
       objectReference: {fileID: 957226384}
     - target: {fileID: 641175805464634632, guid: 2932c5a6fa53e4664b6e7ebde32f3711, type: 3}
       propertyPath: _targetScale.x
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 641175805464634632, guid: 2932c5a6fa53e4664b6e7ebde32f3711, type: 3}
       propertyPath: _targetScale.y
