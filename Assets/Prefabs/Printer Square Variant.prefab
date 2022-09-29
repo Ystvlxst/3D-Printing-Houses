@@ -1059,11 +1059,24 @@ MonoBehaviour:
   _spawnPoint: {fileID: 5647908374874353970}
   _parent: {fileID: 0}
   _factorPositionY: -10.15
-  _doorWallNumber: 2
-  _windowsWallNumber: 5
-  _windowsThirdLevelWallNumber: 8
   _roadSegments:
   - {fileID: 5876899617618408297}
   - {fileID: 5876899618040215845}
   - {fileID: 5876899617667111553}
   - {fileID: 5876899618995113926}
+--- !u!114 &3983664871673569231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7779719564709765803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c7a48c171884473b88dc6101be120f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _printWall: {fileID: 8033235451141320193}
+  _doorWallNumber: 2
+  _windowsWallNumber: 5
+  _windowsThirdLevelWallNumber: 8

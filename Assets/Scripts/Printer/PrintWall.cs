@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using RunnerMovementSystem;
 using RunnerMovementSystem.Examples;
 using UnityEngine;
@@ -14,9 +12,6 @@ public class PrintWall : MonoBehaviour
     [SerializeField] private GameObject _spawnPoint;
     [SerializeField] private Transform _parent;
     [SerializeField] private float _factorPositionY;
-    [SerializeField] private int _doorWallNumber;
-    [SerializeField] private int _windowsWallNumber;
-    [SerializeField] private int _windowsThirdLevelWallNumber;
     [SerializeField] private RoadSegment[] _roadSegments;
 
     private int _currentWallEnded;
@@ -24,9 +19,6 @@ public class PrintWall : MonoBehaviour
     private float _currentPositionY;
 
     public event Action BuildEnded;
-    public event Action DoorZoneReached;
-    public event Action WindowsZoneReached;
-    public event Action ThirdLevelZoneReached;
 
     public int CurrentWall => _currentWall;
 
@@ -77,20 +69,6 @@ public class PrintWall : MonoBehaviour
         }
         else
             _cementEffect.Stop();
-
-        CheckZone();
-    }
-
-    public void CheckZone()
-    {
-        if (_currentWall == _doorWallNumber)
-            DoorZoneReached?.Invoke();
-
-        if (_currentWall == _windowsWallNumber)
-            WindowsZoneReached?.Invoke();
-
-        if (_currentWall == _windowsThirdLevelWallNumber)
-            ThirdLevelZoneReached?.Invoke();
     }
 
     private void OnRoadEnd(RoadSegment roadSegment)

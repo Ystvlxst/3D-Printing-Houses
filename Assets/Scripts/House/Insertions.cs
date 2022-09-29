@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Insertions : MonoBehaviour
 {
-    [SerializeField] private PrintWall _printer;
+    [SerializeField] private ZoneChecker _zoneChecker;
+    [SerializeField] private PrintWall _printWall;
     [SerializeField] private Insertion _door;
     [SerializeField] private Insertion[] _windows;
     [SerializeField] private Insertion[] _thirdLevelWindows;
@@ -15,18 +16,18 @@ public class Insertions : MonoBehaviour
 
     private void OnEnable()
     {
-        _printer.DoorZoneReached += OnFirstLEvelZoneReached;
-        _printer.WindowsZoneReached += OnSecondZoneReached;
-        _printer.ThirdLevelZoneReached += OnThirdZoneReached;
-        _printer.BuildEnded += OnBuildEnd;
+        _zoneChecker.DoorZoneReached += OnFirstLEvelZoneReached;
+        _zoneChecker.WindowsZoneReached += OnSecondZoneReached;
+        _zoneChecker.ThirdLevelZoneReached += OnThirdZoneReached;
+        _printWall.BuildEnded += OnBuildEnd;
     }
 
     private void OnDisable()
     {
-        _printer.DoorZoneReached -= OnFirstLEvelZoneReached;
-        _printer.WindowsZoneReached -= OnSecondZoneReached;
-        _printer.ThirdLevelZoneReached -= OnThirdZoneReached;
-        _printer.BuildEnded -= OnBuildEnd;
+        _zoneChecker.DoorZoneReached -= OnFirstLEvelZoneReached;
+        _zoneChecker.WindowsZoneReached -= OnSecondZoneReached;
+        _zoneChecker.ThirdLevelZoneReached -= OnThirdZoneReached;
+        _printWall.BuildEnded -= OnBuildEnd;
     }
 
     private void OnFirstLEvelZoneReached()
