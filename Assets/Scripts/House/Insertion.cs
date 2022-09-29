@@ -9,6 +9,7 @@ public class Insertion : MonoBehaviour
     [SerializeField] private PrintWall _printWall;
     [SerializeField] private Vector3 _targetScale;
 
+    public Vector3 TargetScale => _targetScale;
     public float Point { get; private set; }
 
     private void OnEnable()

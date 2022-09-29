@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Insertions : MonoBehaviour
 {
     [SerializeField] private ZoneChecker _zoneChecker;
     [SerializeField] private PrintWall _printWall;
-    [SerializeField] private Insertion _door;
-    [SerializeField] private Insertion[] _windows;
+    [SerializeField] private Insertion[] _doors;
+    [SerializeField] private Insertion[] _secondLevelWindows;
     [SerializeField] private Insertion[] _thirdLevelWindows;
-    [SerializeField] private MeshRenderer _doorMesh;
+    [SerializeField] private MeshRenderer[] _doorsMesh;
     [SerializeField] private MeshRenderer[] _windowMeshes;
     [SerializeField] private Texture _doorTexture;
     [SerializeField] private Texture _windowTexture;
+
+    private Coroutine _coroutine;
 
     private void OnEnable()
     {
@@ -32,12 +35,13 @@ public class Insertions : MonoBehaviour
 
     private void OnFirstLEvelZoneReached()
     {
-        _door.SetScale();
+        foreach (var door in _doors)
+            door.SetScale();
     }
 
     private void OnSecondZoneReached()
     {
-        foreach (var window in _windows)
+        foreach (var window in _secondLevelWindows)
             window.SetScale();
     }
 
@@ -49,13 +53,46 @@ public class Insertions : MonoBehaviour
 
     private void OnBuildEnd()
     {
-        _doorMesh.material.mainTexture = _doorTexture;
-        _doorMesh.material.color = Color.white;
+        if (_coroutine != null)
+            StopCoroutine(_coroutine);
 
-        foreach(var mesh in _windowMeshes)
+        _coroutine = StartCoroutine(Scaling());
+    }
+
+    private IEnumerator Scaling()
+    {
+        foreach (var door in _doors)
+            door.transform.DOScale(0, 0.5f);
+
+        foreach (var window in _secondLevelWindows)
+            window.transform.DOScale(0, 0.5f);
+
+        foreach (var window in _thirdLevelWindows)
+            window.transform.DOScale(0, 0.5f);
+
+        yield return new WaitForSeconds(0.25f);
+
+        foreach (var mesh in _doorsMesh)
+        {
+            mesh.material.mainTexture = _doorTexture;
+            mesh.material.color = Color.white;
+        }
+
+        foreach (var mesh in _windowMeshes)
         {
             mesh.material.mainTexture = _windowTexture;
             mesh.material.color = Color.white;
         }
+
+        foreach (var door in _doors)
+            door.transform.DOScale(door.TargetScale, 0.5f);
+
+        foreach (var window in _secondLevelWindows)
+            window.transform.DOScale(window.TargetScale, 0.5f);
+
+        foreach (var window in _thirdLevelWindows)
+            window.transform.DOScale(window.TargetScale, 0.5f);
+
+        _coroutine = null;
     }
 }

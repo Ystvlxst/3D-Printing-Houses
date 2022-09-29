@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,6 +8,8 @@ public class WinCanvas : MonoBehaviour
 {
     [SerializeField] private Button _restartLevel;
     [SerializeField] private Button _nextLevel;
+
+    public event Action NextLevel;
 
     private void OnEnable()
     {
@@ -23,6 +26,7 @@ public class WinCanvas : MonoBehaviour
     private void OnNextLevelButtonClicked()
     {
         Singleton<LevelLoader>.Instance.LoadNextLevel();
+        NextLevel?.Invoke();
     }
 
     private void OnRestartButtonClick()

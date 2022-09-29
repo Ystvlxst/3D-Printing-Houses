@@ -3,6 +3,7 @@ using UnityEngine;
 public class LevelLoader : Singleton<LevelLoader>
 {
     private const string SavedLevelKey = nameof(SavedLevelKey);
+    private const string CounterLevelKey = nameof(CounterLevelKey);
 
     [SerializeField] private LevelList _levelList;
     [SerializeField] private LevelLoadingScreen _loadingScreen;
@@ -13,7 +14,7 @@ public class LevelLoader : Singleton<LevelLoader>
         set => PlayerPrefs.SetInt(SavedLevelKey, value);
     }
 
-    public int LevelIndex => _savedLevel;
+    public int SavedLevel => _savedLevel;
 
     public void LoadSavedLevel()
     {
