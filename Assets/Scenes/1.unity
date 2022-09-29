@@ -2278,6 +2278,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2088003955256727018, guid: 4d38cb6c76b09408dba353d4554a436c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -150
+      objectReference: {fileID: 0}
+    - target: {fileID: 2088003955256727019, guid: 4d38cb6c76b09408dba353d4554a436c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2088003955256727021, guid: 4d38cb6c76b09408dba353d4554a436c, type: 3}
+      propertyPath: m_Name
+      value: RestartButton
+      objectReference: {fileID: 0}
     - target: {fileID: 2088003955417773832, guid: 4d38cb6c76b09408dba353d4554a436c, type: 3}
       propertyPath: _printWall
       value: 
@@ -2390,5 +2402,29 @@ PrefabInstance:
       propertyPath: _insertions.Array.data[3]
       value: 
       objectReference: {fileID: 1467089304}
+    - target: {fileID: 2909828302058031925, guid: 4d38cb6c76b09408dba353d4554a436c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6895203759225036678, guid: 4d38cb6c76b09408dba353d4554a436c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035215511901859083, guid: 4d38cb6c76b09408dba353d4554a436c, type: 3}
+      propertyPath: m_text
+      value: Next
+      objectReference: {fileID: 0}
+    - target: {fileID: 8782254003605515478, guid: 4d38cb6c76b09408dba353d4554a436c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.34288216
+      objectReference: {fileID: 0}
+    - target: {fileID: 8782254003605515478, guid: 4d38cb6c76b09408dba353d4554a436c, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8782254003605515478, guid: 4d38cb6c76b09408dba353d4554a436c, type: 3}
+      propertyPath: m_Color.r
+      value: 0.23137254
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d38cb6c76b09408dba353d4554a436c, type: 3}

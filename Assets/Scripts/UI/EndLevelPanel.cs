@@ -10,30 +10,22 @@ public class EndLevelPanel : MonoBehaviour
 {
     [SerializeField] private GameObject _panel;
     [SerializeField] private PrintWall _printWall;
-    [SerializeField] private Button _restart;
     [SerializeField] private ScoreCounter _scoreCounter;
 
     private void OnEnable()
     {
         _panel.SetActive(false);
         _printWall.BuildEnded += OnBuiledEnd;
-        _restart.onClick.AddListener(Restart);
     }
 
     private void OnDisable()
     {
         _printWall.BuildEnded -= OnBuiledEnd;
-        _restart.onClick.RemoveListener(Restart);
     }
 
     private void OnBuiledEnd()
     {
         StartCoroutine(PanelActive());
-    }
-
-    private void Restart()
-    {
-        SceneManager.LoadScene("SampleScene");
     }
 
     private IEnumerator PanelActive()
