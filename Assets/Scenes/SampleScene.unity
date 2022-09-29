@@ -4794,18 +4794,6 @@ PrefabInstance:
       propertyPath: _yOffset.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 8033235451141320193, guid: d42e08c88298f46839740c1691e131bc, type: 3}
-      propertyPath: _doorWallNumber
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8033235451141320193, guid: d42e08c88298f46839740c1691e131bc, type: 3}
-      propertyPath: _windowsWallNumber
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8033235451141320193, guid: d42e08c88298f46839740c1691e131bc, type: 3}
-      propertyPath: _windowsThirdLevelWallNumber
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 8886914091486979829, guid: d42e08c88298f46839740c1691e131bc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.0400023

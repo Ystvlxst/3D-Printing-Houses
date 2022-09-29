@@ -174,7 +174,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6296727152808848192}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7484957751303282807
 PrefabInstance:
@@ -946,6 +946,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3512137630353935159, guid: a8ed2c149eb0745a68ed187f95b6af06, type: 3}
   m_PrefabInstance: {fileID: 7484957751303282807}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5876899617276549762 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3913936465059969781, guid: a8ed2c149eb0745a68ed187f95b6af06, type: 3}
+  m_PrefabInstance: {fileID: 7484957751303282807}
+  m_PrefabAsset: {fileID: 0}
 --- !u!198 &5072798370496760217 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 2430213542475917806, guid: a8ed2c149eb0745a68ed187f95b6af06, type: 3}
@@ -1022,6 +1027,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8490898e5e8f346b83309c95963dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3576967029363606565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7779719564709765803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3d55e91af2f54c459ef9a9ab9ba576f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _printWall: {fileID: 8033235451141320193}
+  _modelHead: {fileID: 5876899617276549762}
 --- !u!114 &8033235451141320193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1040,8 +1059,9 @@ MonoBehaviour:
   _spawnPoint: {fileID: 5647908374874353970}
   _parent: {fileID: 0}
   _factorPositionY: -10.15
-  _doorWallNumber: 0
-  _windowsWallNumber: 0
+  _doorWallNumber: 2
+  _windowsWallNumber: 5
+  _windowsThirdLevelWallNumber: 8
   _roadSegments:
   - {fileID: 5876899617618408297}
   - {fileID: 5876899618040215845}

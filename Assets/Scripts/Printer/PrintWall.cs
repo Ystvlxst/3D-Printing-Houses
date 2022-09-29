@@ -18,7 +18,6 @@ public class PrintWall : MonoBehaviour
     [SerializeField] private int _windowsWallNumber;
     [SerializeField] private int _windowsThirdLevelWallNumber;
     [SerializeField] private RoadSegment[] _roadSegments;
-    [SerializeField] private GameObject _modelHead;
 
     private int _currentWallEnded;
     private int _currentWall;
@@ -28,6 +27,8 @@ public class PrintWall : MonoBehaviour
     public event Action DoorZoneReached;
     public event Action WindowsZoneReached;
     public event Action ThirdLevelZoneReached;
+
+    public int CurrentWall => _currentWall;
 
     private void OnEnable()
     {
@@ -57,15 +58,6 @@ public class PrintWall : MonoBehaviour
             {
                 var wall = Instantiate(_template, _spawnPoint.transform.position, Quaternion.identity, _parent);
 
-                if(_currentWall == 5)
-                {
-                    SetHeadModelTransform(1.5f, -2);
-                }
-
-                if(_currentWall == 9)
-                {
-                    SetHeadModelTransform(0.5f, -1);
-                }
             }
             else if(_currentWall == 13)
             {
@@ -105,11 +97,5 @@ public class PrintWall : MonoBehaviour
     {
         _currentWallEnded++;
         _currentWall++;
-    }
-
-    private void SetHeadModelTransform(float scaleY,float moveY)
-    {
-        _modelHead.transform.DOScaleY(scaleY, 0.5f);
-        _modelHead.transform.DOLocalMoveY(moveY, 0.5f);
     }
 }
