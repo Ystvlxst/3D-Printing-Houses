@@ -401,6 +401,18 @@ PrefabInstance:
       propertyPath: _printWall
       value: 
       objectReference: {fileID: 957226384}
+    - target: {fileID: 7985037130535889983, guid: c1513b48068c541248c9599d08ab1bc3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985037130535889983, guid: c1513b48068c541248c9599d08ab1bc3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 12.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985037130535889983, guid: c1513b48068c541248c9599d08ab1bc3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1513b48068c541248c9599d08ab1bc3, type: 3}
 --- !u!1001 &190943027
