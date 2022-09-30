@@ -61,15 +61,6 @@ public class Insertions : MonoBehaviour
 
     private IEnumerator Scaling()
     {
-        foreach (var door in _doors)
-            door.transform.DOScale(0, 0.5f);
-
-        foreach (var window in _secondLevelWindows)
-            window.transform.DOScale(0, 0.5f);
-
-        foreach (var window in _thirdLevelWindows)
-            window.transform.DOScale(0, 0.5f);
-
         yield return new WaitForSeconds(0.25f);
 
         foreach (var mesh in _doorsMesh)
@@ -83,16 +74,6 @@ public class Insertions : MonoBehaviour
             mesh.material.mainTexture = _windowTexture;
             mesh.material.color = Color.white;
         }
-
-        foreach (var door in _doors)
-            door.transform.DOScale(door.TargetScale, 0.5f);
-
-        foreach (var window in _secondLevelWindows)
-            window.transform.DOScale(window.TargetScale, 0.5f);
-
-        foreach (var window in _thirdLevelWindows)
-            window.transform.DOScale(window.TargetScale, 0.5f);
-
         _coroutine = null;
     }
 }
