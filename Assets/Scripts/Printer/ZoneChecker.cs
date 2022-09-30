@@ -11,6 +11,7 @@ public class ZoneChecker : MonoBehaviour
     public event Action DoorZoneReached;
     public event Action WindowsZoneReached;
     public event Action ThirdLevelZoneReached;
+    public event Action AnyZoneReached;
 
     private void FixedUpdate()
     {
@@ -20,12 +21,21 @@ public class ZoneChecker : MonoBehaviour
     public void CheckZone()
     {
         if (_printWall.CurrentWall == _doorWallNumber)
+        {
             DoorZoneReached?.Invoke();
+            AnyZoneReached?.Invoke();
+        }
 
         if (_printWall.CurrentWall == _windowsWallNumber)
+        {
             WindowsZoneReached?.Invoke();
+            AnyZoneReached?.Invoke();
+        }
 
         if (_printWall.CurrentWall == _windowsThirdLevelWallNumber)
+        {
             ThirdLevelZoneReached?.Invoke();
+            AnyZoneReached?.Invoke();
+        }
     }
 }

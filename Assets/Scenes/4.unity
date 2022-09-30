@@ -3900,6 +3900,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7a48c171884473b88dc6101be120f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1943308714 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5025327309860748740, guid: d42e08c88298f46839740c1691e131bc, type: 3}
+  m_PrefabInstance: {fileID: 1943308712}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eb3dac8755925c42b527ffe8f8cadb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1963602874
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5359,5 +5370,9 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.23137254
       objectReference: {fileID: 0}
+    - target: {fileID: 8848815137028751099, guid: 4d38cb6c76b09408dba353d4554a436c, type: 3}
+      propertyPath: _headMovementSystem
+      value: 
+      objectReference: {fileID: 1943308714}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d38cb6c76b09408dba353d4554a436c, type: 3}
