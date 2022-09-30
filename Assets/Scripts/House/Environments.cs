@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class Environment : MonoBehaviour
+public class Environments : MonoBehaviour
 {
     [SerializeField] private PrintWall _printWall;
 

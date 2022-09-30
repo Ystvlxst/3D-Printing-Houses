@@ -10,6 +10,7 @@ public class WinCanvas : MonoBehaviour
     [SerializeField] private Button _nextLevel;
 
     public event Action NextLevel;
+    public event Action RestartLevel;
 
     private void OnEnable()
     {
@@ -32,5 +33,6 @@ public class WinCanvas : MonoBehaviour
     private void OnRestartButtonClick()
     {
         Singleton<LevelLoader>.Instance.ReloadCurrentLevel();
+        RestartLevel?.Invoke();
     }
 }
