@@ -9,24 +9,30 @@ using RunnerMovementSystem;
 public class ProgressEffect : MonoBehaviour
 {
     [SerializeField] private TMP_Text[] _textTemplates;
-    [SerializeField] private MovementSystem _headMovementSystem;
 
-    private void OnEnable()
+    private Coroutine _coroutine;
+
+    private void Awake()
     {
         for (int i = 0; i < _textTemplates.Length; i++)
             _textTemplates[i].gameObject.transform.DOScale(0, 0.01f);
-
-        _headMovementSystem.PathEnded += OnAnyZoneReach;
     }
 
-    private void OnDisable()
+    private void Update()
     {
-        _headMovementSystem.PathEnded -= OnAnyZoneReach;
+        if (Input.GetMouseButtonUp(0))
+        {
+            Reaction();
+            Debug.Log("up");
+        }
     }
 
-    private void OnAnyZoneReach(PathSegment pathSegment)
+    private void Reaction()
     {
-        StartCoroutine(Scaling());
+        if (_coroutine != null)
+            StopCoroutine(_coroutine);
+
+        _coroutine = StartCoroutine(Scaling());
     }
 
     private IEnumerator Scaling()
