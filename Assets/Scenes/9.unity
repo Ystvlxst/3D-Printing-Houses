@@ -6832,6 +6832,18 @@ PrefabInstance:
       propertyPath: _insertions.Array.data[3]
       value: 
       objectReference: {fileID: 1467089304}
+    - target: {fileID: 2088003955417773847, guid: 4d38cb6c76b09408dba353d4554a436c, type: 3}
+      propertyPath: _maxScore
+      value: 130000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2088003955417773847, guid: 4d38cb6c76b09408dba353d4554a436c, type: 3}
+      propertyPath: _minScore
+      value: 6000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2088003955417773847, guid: 4d38cb6c76b09408dba353d4554a436c, type: 3}
+      propertyPath: _middleScore
+      value: 60000
+      objectReference: {fileID: 0}
     - target: {fileID: 2909828302058031925, guid: 4d38cb6c76b09408dba353d4554a436c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -7

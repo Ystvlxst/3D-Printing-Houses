@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using System;
 
 public class Insertion : MonoBehaviour
 {
@@ -11,11 +8,11 @@ public class Insertion : MonoBehaviour
     [SerializeField] private Vector3 _targetScale;
 
     public Vector3 TargetScale => _targetScale;
-    public float Point { get; private set; }
+    public float Score { get; private set; }
 
     private void OnEnable()
     {
-        Point = 0;
+        Score = 0;
 
         gameObject.transform.localScale = Vector3.zero;
 
@@ -39,7 +36,7 @@ public class Insertion : MonoBehaviour
         foreach (Collider collider in colliders)
         {
             if(collider.TryGetComponent(out Wall wall))
-                Point += colliders.Length;
+                Score += colliders.Length;
         }
     }
 

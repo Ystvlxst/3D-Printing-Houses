@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
@@ -11,26 +9,31 @@ public class StarsCounter : MonoBehaviour
     [SerializeField] private ScoreCounter _scoreCounter;
     [SerializeField] private GameObject[] _starPoints;
 
-    private float AllScore => _scoreCounter.AllPoints;
+    private float Score => _scoreCounter.AllScore;
+    private float _zeroScore = 500;
 
     public void CheckScore()
     {
         for(int i = 0; i < _starPoints.Length; i++)
         {
-            if (AllScore <= _middleScore && AllScore > _minScore)
-                ScaleStar(_starPoints[1]);
-
-            if (AllScore <= _minScore && AllScore >= 500)
+            if(Score <= _zeroScore)
+            {
+                ScaleStar(_starPoints[i]);
+            }
+            else if(Score >= _minScore && Score <= _middleScore)
             {
                 ScaleStar(_starPoints[1]);
                 ScaleStar(_starPoints[2]);
             }
-
-            if(AllScore >= _middleScore && AllScore < _maxScore)
-                ScaleStar(_starPoints[i]);
-
-            if (AllScore < _minScore || AllScore > _maxScore)
+            else if (Score >= _middleScore && Score <= _maxScore)
+            {
                 ScaleStar(_starPoints[1]);
+                ScaleStar(_starPoints[2]);
+            }
+            else if(Score >= _maxScore)
+            {
+                return;
+            }
         }
     }
 
