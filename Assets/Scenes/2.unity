@@ -807,6 +807,63 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 4957196823970909986, guid: 2932c5a6fa53e4664b6e7ebde32f3711, type: 3}
   m_PrefabInstance: {fileID: 204214893}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &244500490
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8191071991962714314, guid: 58a1552ff4ede4cf0a01a1937ae6b887, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8191071991962714314, guid: 58a1552ff4ede4cf0a01a1937ae6b887, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8191071991962714314, guid: 58a1552ff4ede4cf0a01a1937ae6b887, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 8191071991962714314, guid: 58a1552ff4ede4cf0a01a1937ae6b887, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.2266
+      objectReference: {fileID: 0}
+    - target: {fileID: 8191071991962714314, guid: 58a1552ff4ede4cf0a01a1937ae6b887, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8191071991962714314, guid: 58a1552ff4ede4cf0a01a1937ae6b887, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8191071991962714314, guid: 58a1552ff4ede4cf0a01a1937ae6b887, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8191071991962714314, guid: 58a1552ff4ede4cf0a01a1937ae6b887, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8191071991962714314, guid: 58a1552ff4ede4cf0a01a1937ae6b887, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8191071991962714314, guid: 58a1552ff4ede4cf0a01a1937ae6b887, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8191071991962714314, guid: 58a1552ff4ede4cf0a01a1937ae6b887, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8191071991962714326, guid: 58a1552ff4ede4cf0a01a1937ae6b887, type: 3}
+      propertyPath: m_Name
+      value: Water
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 58a1552ff4ede4cf0a01a1937ae6b887, type: 3}
 --- !u!1001 &361150062
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1988,7 +2045,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 80
+  field of view: 95
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -3941,7 +3998,7 @@ Transform:
   m_GameObject: {fileID: 2127520700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.5, y: 0, z: 0}
-  m_LocalScale: {x: 8, y: 1, z: 5}
+  m_LocalScale: {x: 10, y: 1, z: 7.33}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
