@@ -7,7 +7,7 @@ public class CameraBlend : MonoBehaviour
 
     public void Finish()
     {
-        StartCoroutine(Trigger());
+        _animator.SetBool(Parameters.Finish, true);
     }
 
     private IEnumerator Trigger()

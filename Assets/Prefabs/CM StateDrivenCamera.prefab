@@ -582,5 +582,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d3f012bc463d406abdb6d585a953c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _camera: {fileID: 7388912155117468448}
   _printWall: {fileID: 0}
+  _map:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _speedRate: 60
