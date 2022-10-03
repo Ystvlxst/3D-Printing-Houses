@@ -3355,7 +3355,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.23113209, g: 0.5301362, b: 1, a: 0}
+  m_BackGroundColor: {r: 0.14173192, g: 0.8584906, b: 0.4044707, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -3776,63 +3776,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68eb2d33f59df4d848c763d3f0d1adf4, type: 3}
---- !u!1001 &1565303032
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8191071991962714314, guid: 58a1552ff4ede4cf0a01a1937ae6b887, type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8191071991962714314, guid: 58a1552ff4ede4cf0a01a1937ae6b887, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -8.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8191071991962714314, guid: 58a1552ff4ede4cf0a01a1937ae6b887, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 8191071991962714314, guid: 58a1552ff4ede4cf0a01a1937ae6b887, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.2266
-      objectReference: {fileID: 0}
-    - target: {fileID: 8191071991962714314, guid: 58a1552ff4ede4cf0a01a1937ae6b887, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8191071991962714314, guid: 58a1552ff4ede4cf0a01a1937ae6b887, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8191071991962714314, guid: 58a1552ff4ede4cf0a01a1937ae6b887, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8191071991962714314, guid: 58a1552ff4ede4cf0a01a1937ae6b887, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8191071991962714314, guid: 58a1552ff4ede4cf0a01a1937ae6b887, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8191071991962714314, guid: 58a1552ff4ede4cf0a01a1937ae6b887, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8191071991962714314, guid: 58a1552ff4ede4cf0a01a1937ae6b887, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8191071991962714326, guid: 58a1552ff4ede4cf0a01a1937ae6b887, type: 3}
-      propertyPath: m_Name
-      value: Water
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 58a1552ff4ede4cf0a01a1937ae6b887, type: 3}
 --- !u!1001 &1635540766
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5988,7 +5931,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bf6ef0b8b7cfd482bbf7a4f5aa6f430b, type: 2}
+  - {fileID: 2100000, guid: c8f65ce73ceb744608ca6dba83494317, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6116,9 +6059,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 957226384}
     - target: {fileID: 458061525401396019, guid: 590d71ccc740c4721853f6327e458584, type: 3}
+      propertyPath: _doorTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 05f4bbc5df3cb4061a971de32524456d, type: 3}
+    - target: {fileID: 458061525401396019, guid: 590d71ccc740c4721853f6327e458584, type: 3}
       propertyPath: _zoneChecker
       value: 
       objectReference: {fileID: 1943308713}
+    - target: {fileID: 458061525401396019, guid: 590d71ccc740c4721853f6327e458584, type: 3}
+      propertyPath: _windowTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 88be70025225a4d9f8dfa594d395c974, type: 3}
     - target: {fileID: 458061525401396019, guid: 590d71ccc740c4721853f6327e458584, type: 3}
       propertyPath: _doors.Array.size
       value: 2
