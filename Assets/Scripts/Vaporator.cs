@@ -5,7 +5,7 @@ using static Obi.ObiSolver;
 public class Vaporator : MonoBehaviour
 {
     [SerializeField] private ObiSolver _solver;
-    [SerializeField] private ParticleSystem _smoke;
+    //[SerializeField] private ParticleSystem _smoke;
     //[SerializeField] private SmokeParticlePool _smokeParticlePool;
 
 
@@ -44,16 +44,6 @@ public class Vaporator : MonoBehaviour
                 {
                     int particleIndex = _solver.simplices[contact.bodyA];
                     ParticleInActor particle = _solver.particleToActor[particleIndex];
-
-                    if (_smoke != null)
-                    { 
-                        //if(_smokeParticlePool.TryGetSmokeParticles(out ParticleSystem particleSystem))
-                        //{
-                        //   Vector3 pos = _solver.renderablePositions[particleIndex];
-                        //    pos.z = -5f;
-                        //  particleSystem.transform.position = pos;
-                        //}
-                    }
 
                     particle.actor.DeactivateParticle(particle.indexInActor);
                 }
